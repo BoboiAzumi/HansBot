@@ -11,3 +11,4 @@ def Decode(Str):
     Base64 = base64.b64decode(Str)
     Str = Base64.decode("ascii")
     return Str
+    
