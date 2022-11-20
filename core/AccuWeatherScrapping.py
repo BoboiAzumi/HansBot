@@ -53,6 +53,7 @@ class AccuWeather:
             self.driver.get("{}/en/search-locations?query={}".format(self.url, location))
             
         elif href != "":
+            href = b64.Decode(href)
             self.driver.get("{}{}".format(self.url, href))
         
         else:
