@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 import selenium.webdriver.support.expected_conditions as expc
+import Base64DecodeEncode as b64
 
 class AccuWeather:
     def __init__(self):
@@ -33,7 +34,7 @@ class AccuWeather:
             
                 j = 0
                 for i in self.search:
-                    arraySearch.append({"No":j, "Value":i.text, "href":i.get_attribute("href").replace(self.url,"")})
+                    arraySearch.append({"No":j, "Value":i.text, "href":b64.Encode(i.get_attribute("href").replace(self.url,""))})
                     j += 1
 
                 self.search = arraySearch
